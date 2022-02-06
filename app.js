@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(responseTime());
 app.use(helmet());
 app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:8443, http://www.localhost:8443");
+    res.header("Access-Control-Allow-Origin", "http://143.110.248.159:80, http://www.143.110.248.159:80, http://143.110.248.159, http://www.143.110.248.159");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
     res.header("X-XSS-Protection", "1: mode=block");
@@ -36,7 +36,7 @@ const limiter = async (req, res, next) => {
 
 //ALLOWING ONLY NECESSARY HTTP METHODS FOR SECURITY
 app.use(cors({
-    origin: 'http://localhost:8443',
+    origin: 'http://143.110.248.159',
     methods: ['GET', 'POST', 'PUT', 'OPTIONS']
 }));
 
